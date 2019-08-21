@@ -1,6 +1,6 @@
-import {FETCH_DATA , RESET_DATA} from '../actions/types';
+import {FETCH_DATA , RESET_DATA, FAILED} from '../actions/types';
 
-const INIT_STATE = { data:[], isLoading:false, error:'' };
+const INIT_STATE = { data:[], error:'' };
 
 export default (state = INIT_STATE , action) => {
     switch(action.type){
@@ -8,7 +8,9 @@ export default (state = INIT_STATE , action) => {
             return {...state,data:action.payload}
         case RESET_DATA:
             return {...state , data:[]}
-            default:
+        case FAILED:
+            return{...state , error:action.payload};     
+        default:
             return state;    
     }
 }
