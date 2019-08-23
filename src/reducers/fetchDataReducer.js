@@ -7,7 +7,7 @@ export default (state = INIT_STATE , action) => {
         case FETCH_DATA:
             return {...state,data:action.payload,loading:false}
         case RESET_DATA:
-            return {...state , data:[]}
+            return {...state , data:[],loading:true}
         case FAILED:
             return{...state , error:action.payload};     
         default:

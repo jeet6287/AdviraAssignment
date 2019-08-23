@@ -6,7 +6,7 @@ import ReduxThunk from 'redux-thunk';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import reducers from './src/reducers';
-import UserPage from './src/components/userPage';
+import MealsData from './src/components/mealDetails';
 
 const store = createStore(reducers,applyMiddleware(ReduxThunk)); 
 
@@ -22,7 +22,7 @@ class App extends Component{
       <Provider store = {store}>
        <View style={{flex:1}}>
         <MyStatusBar backgroundColor="#cfccc6" barStyle="light-content" />
-         <UserPage />
+        <MealsData /> 
        </View>
      </Provider>
     )
