@@ -1,25 +1,38 @@
 import React, {Component} from 'react';
-import {View,Text} from 'react-native';
+import {View,Text,StatusBar,StyleSheet} from 'react-native';
 import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import reducers from './src/reducers';
 import UserPage from './src/components/userPage';
 
 const store = createStore(reducers,applyMiddleware(ReduxThunk)); 
 
+const MyStatusBar = ({backgroundColor, ...props}) => (
+  <View style={[styles.statusBar, { backgroundColor }]}>
+    <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+  </View>
+);
+
 class App extends Component{
   render(){
     return(
       <Provider store = {store}>
-       <View>
-         <Text> ADVIRA </Text>
+       <View style={{flex:1}}>
+        <MyStatusBar backgroundColor="#cfccc6" barStyle="light-content" />
          <UserPage />
        </View>
      </Provider>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  statusBar: {
+    height: getStatusBarHeight(),
+  }
+});
 
 export default App; 
