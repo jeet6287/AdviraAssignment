@@ -47,7 +47,13 @@ class MealsData extends Component {
             <FlatList
                 data={this.props.data}
                 renderItem={({item}) => (
-                    <MealDataList photo = {item.photo}/>
+                    <MealDataList 
+                        photo = {item.photo} 
+                        title = {item.title}
+                        placename ={item.restaurant.place_name}
+                        likes ={item.total_likes}
+                        comments = {item.total_comments}
+                    />
                 )}
                 keyExtractor={(item) => (item.id).toString() }
                 refreshControl= {
