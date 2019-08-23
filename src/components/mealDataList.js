@@ -3,7 +3,7 @@ import {View , Image } from 'react-native';
 
 class MealDataList extends Component {
     render(){
-        console.log("MealDataList ",this.props);
+        //console.log("MealDataList ",this.props);
         let Image_Http_URL ={ uri: this.props.photo};
         return(
           <View style = {styles.containerStyle}>
@@ -11,6 +11,9 @@ class MealDataList extends Component {
               style = {styles.imageStyle}
               source = {Image_Http_URL}
             />
+            <View>
+
+            </View>
           </View>
         );
     }

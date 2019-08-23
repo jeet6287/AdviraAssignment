@@ -22,6 +22,6 @@ export const fetchData = (user_id,pageIndex) => {
 }
 
 export const resetData = () => {
-  return {type:RESET_DATA , payload : {}};
+   return {type:RESET_DATA , payload : {}}; 
 }
 
