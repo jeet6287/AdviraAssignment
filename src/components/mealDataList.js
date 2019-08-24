@@ -3,7 +3,6 @@ import {View , ImageBackground ,Text} from 'react-native';
 
 class MealDataList extends Component {
     render(){
-        console.log("MealDataList ",this.props);
         let {photo,comments,likes,placename,title} = this.props;
         let Image_Http_URL ={ uri: photo};
         return(

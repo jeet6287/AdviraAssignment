@@ -4,7 +4,6 @@ import {View,Text,Image} from 'react-native';
 const Header = (props) => {
  let {username,userimage} = props; 
  let userImage = { uri: userimage};
- console.log(props);
  return (
    <View style = {styles.viewStyle}>
      <Image 
