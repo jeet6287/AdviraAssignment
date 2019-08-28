@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
+    "entryPoint": "index.js",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -15,7 +16,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   },
-  "devDependencies": {
+  "devDependencies": { 
     "@babel/core": "7.5.5",
     "@babel/runtime": "7.5.5",
     "@react-native-community/eslint-config": "0.0.3",
